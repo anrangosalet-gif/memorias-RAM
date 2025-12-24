@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Especificaciones DDR3 | Tech Lab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" type="image/x-icon" href="icono RAM.jfif">
+  <style>
+    /* --- VARIABLES Y BASES --- */
+    :root {
+      --negro-fondo: #050505;
+      --cian-neon: #00f3ff;
+      --violeta-neon: #9d00ff;
+      --gris-tech: #1a1a1a;
+      --blanco-suave: #e0f7fa;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--negro-fondo);
+      background-image: radial-gradient(circle at center, #0a151a 0%, #050505 100%);
+      color: var(--blanco-suave);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* --- CONTENEDOR PRINCIPAL --- */
+    .portada {
+      width: 90%;
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 30px;
+      border: 1px solid rgba(0, 243, 255, 0.2);
+      border-radius: 20px;
+      background: rgba(26, 26, 26, 0.5);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+    }
+
+    /* --- ENCABEZADO --- */
+    .header-detalle {
+      text-align: center;
+      margin-bottom: 40px;
+      border-bottom: 2px solid var(--violeta-neon);
+      padding-bottom: 20px;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3rem;
+      color: var(--cian-neon);
+      text-shadow: 0 0 15px var(--cian-neon);
+      margin: 0;
+      letter-spacing: 5px;
+    }
+
+    .status-bar {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.85rem;
+      color: var(--violeta-neon);
+      letter-spacing: 3px;
+      margin-top: 10px;
+      text-transform: uppercase;
+    }
+
+    /* --- GRID DE CONTENIDO --- */
+    .contenido-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .info-tecnica h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--cian-neon);
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+
+    .info-tecnica p {
+      line-height: 1.8;
+      color: #b0bec5;
+      text-align: justify;
+    }
+
+    /* --- TABLA TÉCNICA --- */
+    .tabla-contenedor {
+      background: rgba(157, 0, 255, 0.05);
+      border: 1px solid var(--violeta-neon);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 25px;
+      box-shadow: inset 0 0 15px rgba(157, 0, 255, 0.2);
+    }
+
+    .tabla-contenedor h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
+      margin-top: 0;
+      color: var(--blanco-suave);
+      border-left: 4px solid var(--cian-neon);
+      padding-left: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    th {
+      text-align: left;
+      color: var(--violeta-neon);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      padding: 10px;
+      border-bottom: 1px solid var(--violeta-neon);
+    }
+
+    td {
+      padding: 12px 10px;
+      font-size: 0.9rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .neon-highlight {
+      color: var(--cian-neon);
+      font-weight: bold;
+      text-shadow: 0 0 8px var(--cian-neon);
+    }
+
+    /* --- ELEMENTO VISUAL --- */
+    .visual-hardware {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .img-neon {
+      width: 100%;
+      border-radius: 15px;
+      border: 2px solid var(--cian-neon);
+      box-shadow: 0 0 25px rgba(0, 243, 255, 0.3);
+      transition: transform 0.4s ease;
+    }
+
+    .img-neon:hover {
+      transform: scale(1.03) rotate(1deg);
+    }
+
+    .chip-label {
+      margin-top: 15px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      background: var(--cian-neon);
+      color: #000;
+      padding: 5px 15px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    /* --- BOTONERA --- */
+    .botonera-detalle {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .boton-neon {
+      text-decoration: none;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.8rem;
+      color: var(--cian-neon);
+      border: 1px solid var(--cian-neon);
+      padding: 12px 25px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      background: transparent;
+      letter-spacing: 2px;
+    }
+
+    .boton-neon:hover {
+      background: var(--cian-neon);
+      color: #000;
+      box-shadow: 0 0 20px var(--cian-neon);
+      transform: translateY(-3px);
+    }
+
+    .link-back {
+      display: block;
+      margin-top: 40px;
+      text-align: center;
+      color: var(--violeta-neon);
+      text-decoration: none;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.8rem;
+      transition: color 0.3s;
+    }
+
+    .link-back:hover {
+      color: var(--cian-neon);
+      text-shadow: 0 0 10px var(--cian-neon);
+    }
+
+    /* --- RESPONSIVO --- */
+    @media (max-width: 850px) {
+      .contenido-grid {
+        grid-template-columns: 1fr;
+      }
+      h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="portada">
+    <header class="header-detalle">
+        <h1>MEMORIA DDR3</h1>
+        <div class="status-bar">Módulo: DIMM • Protocolo: Double Data Rate 3</div>
+    </header>
+
+    <div class="contenido-grid">
+        <div class="info-tecnica">
+            <h2>Arquitectura de Hardware</h2>
+            <p>
+                La memoria <strong>DDR3</strong> supuso una mejora significativa en eficiencia. Introdujo un <em>buffer de prelectura de 8 bits</em> (el doble que DDR2), lo que permite mayores velocidades de transferencia con un consumo energético reducido, siendo ideal para sistemas de alto rendimiento y servidores.
+            </p>
+            
+            
+
+            <div class="tabla-contenedor">
+                <h3>Especificaciones de Energía y Diseño</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>CATEGORÍA</th>
+                            <th>VALOR TÉCNICO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Voltaje Operativo (Vdd)</td>
+                            <td class="neon-highlight">1.5 V / 1.35 V (DDR3L)</td>
+                        </tr>
+                        <tr>
+                            <td>Voltaje de Terminación (Vtt)</td>
+                            <td>0.75 V</td>
+                        </tr>
+                        <tr>
+                            <td>Frecuencia Máxima</td>
+                            <td class="neon-highlight">2133 MHz</td>
+                        </tr>
+                        <tr>
+                            <td>Número de Pines (DIMM)</td>
+                            <td class="neon-highlight">240 Pines</td>
+                        </tr>
+                        <tr>
+                            <td>Ancho de Banda Máx</td>
+                            <td>17,000 MB/s</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="visual-hardware">
+            <img src="imagen DDR3.jfif" alt="DDR3 RAM Module" class="img-neon">
+            <div class="chip-label">8-BIT PREFETCH ARCHITECTURE</div>
+        </div>
+    <a href="index.html" class="link-back">⬅ REGRESAR A LA PÁGINA PRINCIPAL</a>
+  </section>
+
+</body>
+</html>

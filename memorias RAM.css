@@ -1,0 +1,161 @@
+/* --- FUENTE MODERNA --- */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+/* --- Paleta de Colores Neón ---
+   Fondo: #050505 (Negro puro)
+   Acento 1: #00f3ff (Cian Neón)
+   Acento 2: #9d00ff (Violeta Eléctrico)
+   Acento 3: #ff0055 (Magenta Tech)
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  /* Fondo más oscuro para resaltar los neones */
+  background: radial-gradient(circle at center, #111b21 0%, #050505 100%);
+  color: #ffffff;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+/* --- Encabezado --- */
+.encabezado {
+  margin-top: 50px;
+  animation: fadeDown 1.2s ease;
+}
+
+h1 {
+  font-family: 'Orbitron', sans-serif; /* Fuente futurista */
+  font-size: 3.5em;
+  letter-spacing: 6px;
+  margin-bottom: 10px;
+  color: #00f3ff;
+  /* Efecto de texto neón */
+  text-shadow: 0 0 5px #00f3ff, 0 0 15px #00f3ff, 0 0 30px #00b8c4;
+}
+
+h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 300;
+  font-size: 1.1em;
+  color: #9d00ff;
+  text-shadow: 0 0 10px #9d00ff;
+  letter-spacing: 2px;
+}
+
+/* --- Información del autor --- */
+.info {
+  background: rgba(157, 0, 255, 0.05);
+  border: 1px solid #9d00ff;
+  border-radius: 14px;
+  padding: 18px 35px;
+  margin-top: 25px;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(157, 0, 255, 0.4);
+  transition: all 0.4s ease;
+}
+
+.info:hover {
+  transform: scale(1.08);
+  background: rgba(157, 0, 255, 0.15);
+  box-shadow: 0 0 30px rgba(157, 0, 255, 0.8), inset 0 0 10px rgba(157, 0, 255, 0.5);
+}
+
+/* --- Sección de tarjetas --- */
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 60px auto;
+}
+
+/* --- Tarjeta Neón --- */
+.tarjeta {
+  background: rgba(20, 20, 20, 0.8);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 243, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(15px);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Línea superior brillante en cada tarjeta */
+.tarjeta::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #00f3ff, #9d00ff);
+}
+
+.tarjeta:hover {
+  transform: translateY(-15px);
+  border-color: #00f3ff;
+  box-shadow: 0 0 40px rgba(0, 243, 255, 0.4);
+}
+
+.tarjeta h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/* --- Imágenes con marco neón --- */
+.tarjeta img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #00f3ff;
+  filter: grayscale(30%) brightness(0.9);
+  transition: all 0.4s ease;
+}
+
+.tarjeta:hover img {
+  filter: grayscale(0%) brightness(1.1);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00f3ff;
+}
+
+/* --- Descripción --- */
+.tarjeta p {
+  font-size: 0.95em;
+  margin-top: 15px;
+  color: #a0a0a0;
+  line-height: 1.6;
+}
+
+/* --- Pie de página --- */
+footer {
+  margin-top: auto;
+  padding: 30px;
+  font-size: 0.8em;
+  color: #444;
+  letter-spacing: 1px;
+}
+
+/* --- ANIMACIONES --- */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
